@@ -54,7 +54,8 @@ jobs:
           name: app_output
       - name: Output Content
         run: |
-          cat output.json
+          ls
+          cat app_output/app_output.txt
       - name: Deploy
         run: |
           echo "Deployment done ${{ github.token }}..."
