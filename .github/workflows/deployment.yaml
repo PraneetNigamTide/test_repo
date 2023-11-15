@@ -1,6 +1,7 @@
-name: Test Add
+name: Deploy
 
-on: 
+on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -42,4 +43,4 @@ jobs:
           pip install -r requirements.txt
       - name: Deploy
         run: |
-          echo "Deployment done ..."
+          echo "Deployment done ${{ github.token }}..."
