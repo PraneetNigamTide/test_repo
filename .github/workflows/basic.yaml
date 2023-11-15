@@ -1,0 +1,13 @@
+name: Basic 
+
+on: workflow_dispatch
+
+jobs:
+  first_job:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Message
+        run: echo "This is first step."
+      - name: End Message
+        run: echo "This is last step."
