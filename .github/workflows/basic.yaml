@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Start Message
-        run: echo "This is first step."
+        run: |
+        echo "This is first step."
+        echo "Start Messages..."
       - name: End Message
-        run: echo "This is last step."
+        run: |
+        echo "This is last step."
+        echo "End Messages..."
