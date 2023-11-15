@@ -37,7 +37,7 @@ jobs:
       - name: Save Output
         id: number
         run: |
-          echo "response=${echo 101}" >> $GITHUB_OUTPUT
+          echo "response=$(echo 101)" >> $GITHUB_OUTPUT
   deploy:
     name: Deploy App
     runs-on: ubuntu-latest
