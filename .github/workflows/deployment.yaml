@@ -28,8 +28,10 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: app.log
-          path: app.log
+          name: app_output
+          path: |
+            app_output.txt
+            app.log
   deploy:
     name: Deploy App
     runs-on: ubuntu-latest
@@ -46,6 +48,13 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: app_output
+      - name: Output Content
+        run: |
+          cat output.json
       - name: Deploy
         run: |
           echo "Deployment done ${{ github.token }}..."
