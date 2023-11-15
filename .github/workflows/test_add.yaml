@@ -1,0 +1,25 @@
+name: Test Add
+
+on: push
+  branches:
+    - master
+
+jobs:
+  test:
+    name: Test Add
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Python3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Run Tests
+        run: |
+          python test_add.py
