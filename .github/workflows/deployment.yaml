@@ -25,6 +25,11 @@ jobs:
       - name: Run Tests
         run: |
           python -m unittest test_app.py
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: app.log
+          path: app.log
   deploy:
     name: Deploy App
     runs-on: ubuntu-latest
